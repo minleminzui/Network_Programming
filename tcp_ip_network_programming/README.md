@@ -136,6 +136,7 @@
 - epoll的优点在于：
     - 无需编写以监视状态变化为目的的针对所有文件描述符的循环语句
     - 调用对应于select函数的epoll_wait函数时，不需要传递监视信息
-- epoll
+- `epoll_create`会创建一个名为`epoll例程`的用来保存文件描述符的空间,epoll_create创建的资源与套接字相同,由os管理,该函数返回文件描述符用来区分多个epoll例程.需要终止时,与其他文件描述符相同,需要调用close函数
+- `epoll_ctl`优点是在其内部注册监视对象文件描述符,`epoll_event`结构体中保存了发生事件的文件描述符和用于注册关注的事件
 # 参考
 - [《TCP/IP网络编程》，作者尹圣雨](https://book.douban.com/subject/25911735/)
